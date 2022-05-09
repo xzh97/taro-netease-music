@@ -1,6 +1,6 @@
 const config = {
   projectName: 'taro-netease-music',
-  date: '2022-5-6',
+  date: '2022-5-9',
   designWidth: 750,
   deviceRatio: {
     640: 2.34 / 2,

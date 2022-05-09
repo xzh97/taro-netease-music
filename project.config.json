@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./dist",
   "projectname": "taro-netease-music",
-  "description": "taro+react相关技术栈 做一个小程序的网易云音乐",
+  "description": "taro+react+ts",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,

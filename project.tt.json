@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./",
   "projectname": "taro-netease-music",
-  "appid": "testAppId",
+  "appid": "touristappid",
   "setting": {
     "es6": false,
     "minified": false
