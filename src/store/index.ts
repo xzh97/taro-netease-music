@@ -13,7 +13,7 @@ const middleWares = [
 ]
 
 if(process.env.NODE_ENV === 'development'){
-    middleWares.push(require('redix-logger').createLogger())
+    middleWares.push(require('redux-logger').createLogger())
 }
 
 const enhancer = composeEnhancers(

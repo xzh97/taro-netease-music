@@ -1,0 +1,12 @@
+.one-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clearfix::after {
+    content: '';
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
