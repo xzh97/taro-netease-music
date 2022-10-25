@@ -1,11 +1,12 @@
 import Taro from '@tarojs/taro';
 import { Component } from 'react';
-import { View, Icon, Swiper, SwiperItem, Image, Text } from '@tarojs/components';
+import { View, Icon, Swiper, SwiperItem, Image, Text, Button } from '@tarojs/components';
 import { Search } from '@taroify/core';
 import { MusicOutlined, Search as SearchIcon } from '@taroify/icons';
 
 import './index.scss';
 import { getBanner } from '@/api/home';
+import coverImg from '@/assets/images/default-cover.jpeg';
 
 type Banner = {
   pic: string;
@@ -48,7 +49,7 @@ class Index extends Component {
           name: '排行榜',
           icon: 'paihangbang'
         }
-      ]
+      ],
     };
   }
   goSearch() {
@@ -106,8 +107,8 @@ class Index extends Component {
               {bannerList.map(banner => {
                 const { pic, bannerId } = banner;
                 return (
-                  <SwiperItem>
-                    <Image className="swiper-img" src={pic} item-id={bannerId} key={bannerId} />
+                  <SwiperItem item-id={bannerId} key={bannerId}>
+                    <Image className="swiper-img" src={pic} />
                   </SwiperItem>
                 );
               })}
@@ -117,7 +118,7 @@ class Index extends Component {
             {navList.map(nav => {
               const { icon, name } = nav;
               return (
-                <View className="nav-item">
+                <View className="nav-item" key={icon}>
                   <View className="nav-item-icon">
                     <Icon type="success" className={`iconfont icon-${icon}`} />
                   </View>
@@ -127,6 +128,25 @@ class Index extends Component {
                 </View>
               );
             })}
+          </View>
+          <View className='i-like'>
+            <View className='i-like-left'>
+              <Image className='cover' src={coverImg} />
+            </View>
+            <View className='i-like-center'>
+              <View className='title'>
+                <Text>我喜欢的音乐</Text>
+              </View>
+              <View className='content'>
+                <Text>《忧伤者》等97首</Text>
+              </View>
+            </View>
+            <View className='i-like-right'>
+              <Button className='play'>
+                <Icon type='success' className='iconfont icon-playfill' />
+                <Text style="vertical-align: middle; font-size:14px;">播放</Text>
+              </Button>
+            </View>
           </View>
         </View>
       </View>
